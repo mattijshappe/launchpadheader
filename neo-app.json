@@ -1,0 +1,39 @@
+{
+  "welcomeFile": "index.html",
+  "routes": [
+    {
+      "path": "/resources/f4w/flp/plugin/title",
+      "target": {
+        "type": "application",
+        "name": "F4W_Launchpad_Title"
+      }
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "F4W_FRD_030",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "Fit4Woco FRD Client 030 Customizing"
+    }
+  ]
+}

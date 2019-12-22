@@ -1,0 +1,10 @@
+/* Logo size */
+.sapUshellShellHeadItmCntnt {
+	width: auto;
+	height: auto;
+}
+
+/* Logo without rounded corners */
+.sapUshellShellHeadItm>span>img {
+	border-radius: 0%;
+}

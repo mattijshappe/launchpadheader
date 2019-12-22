@@ -1,0 +1,9 @@
+{
+	"applications": {},
+	"bootstrapPlugins": {
+		"F4W_Launchpad_Title": {
+			"component": "f4wFlpHeader",
+			"url": "../../../../../"
+		}
+	}
+}

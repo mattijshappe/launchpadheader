@@ -1,0 +1,80 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "f4wFlpHeader",
+		"type": "component",
+		"applicationVersion": {
+			"version": ""
+		},
+		"title": "{{plugin_title}}",
+		"dataSources": {
+			"flp_attributes_srv": {
+				"uri": "/sap/opu/odata/f4w/flp_attributes_srv/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "model/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": []
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.1",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.1"
+				},
+				"sap.m": {
+					"minVersion": "1.38.1"
+				}
+			}
+		},
+		"componentName": "f4wFlpHeader",
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "f4wFlpHeader.i18n.i18n"
+				}
+			},
+			"flpattributes": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneTime",
+					"defaultCountMode": "None"
+				},
+				"dataSource": "flp_attributes_srv"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}		
+	},
+	"sap.flp": {
+		"_version": "1.1.0",
+		"type": "plugin",
+		"config": {}
+	}
+}
