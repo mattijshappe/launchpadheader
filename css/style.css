@@ -1,4 +1,17 @@
-/* Logo size */
+/* Fiori 2: Logo size */
+.sapUshellShellHeadItm {
+	width: auto;
+}
+.sapUshellShellHeadItm .userImgSpan {
+	width: auto;	
+}
+
+/* Fiori 2: Title size */
+.sapUshellShellHeadSubtitle {
+	max-width: none !important;
+}
+
+/* Fiori 3: Logo size */
 .sapUshellShellHeadItmCntnt {
 	width: auto;
 	height: auto;
