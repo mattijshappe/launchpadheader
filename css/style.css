@@ -1,9 +1,11 @@
 /* Fiori 2: Logo size */
 .sapUshellShellHeadItm {
 	width: auto;
+	height: auto;
 }
 .sapUshellShellHeadItm .userImgSpan {
-	width: auto;	
+	width: auto;
+	height: auto;
 }
 
 /* Fiori 2: Title size */
@@ -20,4 +22,6 @@
 /* Logo without rounded corners */
 .sapUshellShellHeadItm>span>img {
 	border-radius: 0%;
+	width: auto;
+	height: auto;
 }
