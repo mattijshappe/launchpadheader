@@ -19,8 +19,8 @@ sap.ui.define([
 				// Get client from start_up file
 				var oStartUpModel = new sap.ui.model.json.JSONModel();
 				oStartUpModel.loadData("/sap/bc/ui2/start_up?", "", false);
-				// var clientId = oStartUpModel.getProperty("/client");
-				var clientId = "910";
+				var clientId = oStartUpModel.getProperty("/client");
+				// var clientId = "910";
 
 				// Get launchpad logo and title for client from Fiori Frontend Server
 				if( clientId ) {
