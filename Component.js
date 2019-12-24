@@ -23,21 +23,25 @@ sap.ui.define([
 				// var clientId = "910";
 
 				// Get launchpad logo and title for client from Fiori Frontend Server
-				if( clientId ) {
+				if (clientId) {
 					var oFlpAttrModel = that.getModel("flpattributes");
 					var sPath = "/clientSet(clientId='" + clientId + "')";
 					oFlpAttrModel.read(sPath, {
 						success: function(oData, response) {
 							// Set launchpad title
-							oRenderer.setHeaderTitle(oData.title);
+							if (oData.title) {
+								oRenderer.setHeaderTitle(oData.title);
+							}
 
 							// Set launchpad logo
-							oRenderer.addHeaderItem("sap.ushell.ui.shell.ShellHeadItem", 
-							                        { id: "f4wLogo",
-							                          icon: oData.logoURL
-							                        },
-							                        true,   // bIsVisible: Specifies whether the header item control is displayed after being created
-							                        true); 	// bCurrentState: If true then the new created control is added to the current rendered shell state	
+							if (oData.logoURL) {
+								oRenderer.addHeaderItem("sap.ushell.ui.shell.ShellHeadItem", 
+								                        { id: "f4wLogo",
+								                          icon: oData.logoURL
+								                        },
+								                        true,   // bIsVisible: Specifies whether the header item control is displayed after being created
+								                        true); 	// bCurrentState: If true then the new created control is added to the current rendered shell state	
+							}
 						}
 					});
 				}
