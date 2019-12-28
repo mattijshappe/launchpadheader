@@ -20,7 +20,7 @@ sap.ui.define([
 				var oStartUpModel = new sap.ui.model.json.JSONModel();
 				oStartUpModel.loadData("/sap/bc/ui2/start_up?", "", false);
 				var clientId = oStartUpModel.getProperty("/client");
-				// var clientId = "910";
+				// var clientId = "030";
 
 				// Get launchpad logo and title for client from Fiori Frontend Server
 				if (clientId) {
@@ -35,12 +35,11 @@ sap.ui.define([
 
 							// Set launchpad logo
 							if (oData.logoURL) {
-								oRenderer.addHeaderItem("sap.ushell.ui.shell.ShellHeadItem", 
-								                        { id: "f4wLogo",
-								                          icon: oData.logoURL
-								                        },
-								                        true,   // bIsVisible: Specifies whether the header item control is displayed after being created
-								                        true); 	// bCurrentState: If true then the new created control is added to the current rendered shell state	
+								oRenderer.addHeaderEndItem("sap.ushell.ui.shell.ShellHeadItem",
+									                       { id: "f4wLogo",
+								                             icon: oData.logoURL },
+								                           true,    // bIsVisible = true: Header item control is displayed after being created
+								                           false);  // bCurrentState = false: Prevent that header item is removed when opening app
 							}
 						}
 					});
