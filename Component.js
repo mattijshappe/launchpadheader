@@ -13,21 +13,21 @@ sap.ui.define([
 
 		init: function () {
 			var that = this;
-			
+
 			var rendererPromise = this._getRenderer();
 			rendererPromise.then(function (oRenderer) {
 				// Get client from start_up file
-				var oStartUpModel = new sap.ui.model.json.JSONModel();
-				oStartUpModel.loadData("/sap/bc/ui2/start_up?", "", false);
-				var clientId = oStartUpModel.getProperty("/client");
-				// var clientId = "030";
+				// var oStartUpModel = new sap.ui.model.json.JSONModel();
+				// oStartUpModel.loadData("/sap/bc/ui2/start_up?", "", false);
+				// var clientId = oStartUpModel.getProperty("/client");
+				var clientId = "030";
 
 				// Get launchpad logo and title for client from Fiori Frontend Server
 				if (clientId) {
 					var oFlpAttrModel = that.getModel("flpattributes");
 					var sPath = "/clientSet(clientId='" + clientId + "')";
 					oFlpAttrModel.read(sPath, {
-						success: function(oData, response) {
+						success: function (oData, response) {
 							// Set launchpad title
 							if (oData.title) {
 								oRenderer.setHeaderTitle(oData.title);
@@ -35,11 +35,15 @@ sap.ui.define([
 
 							// Set launchpad logo
 							if (oData.logoURL) {
-								oRenderer.addHeaderEndItem("sap.ushell.ui.shell.ShellHeadItem",
-									                       { id: "f4wLogo",
-								                             icon: oData.logoURL },
-								                           true,    // bIsVisible = true: Header item control is displayed after being created
-								                           false);  // bCurrentState = false: Prevent that header item is removed when opening app
+								var oControl =
+									oRenderer.addHeaderEndItem("sap.ushell.ui.shell.ShellHeadItem", {
+											id: "f4wLogo",
+											icon: oData.logoURL
+										},
+										true, // bIsVisible = true: Header item control is displayed after being created
+										false); // bCurrentState = false: Prevent that header item is removed when opening app
+								// Show logo only on dektop
+								oControl.addStyleClass("sapUiVisibleOnlyOnDesktop");
 							}
 						}
 					});
